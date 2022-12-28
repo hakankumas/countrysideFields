@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+<title>countrysideFields.com</title>
+<meta charset="UTF-8"/>
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("manager_charts1", {
+    animationEnabled: true,
+    title:{
+        text: ""
+    },
+    axisX:{
+        valueFormatString: "DD MMM",
+        crosshair: {
+            enabled: true,
+            snapToDataPoint: true
+        }
+    },
+    axisY: {
+        title: "",
+        valueFormatString: "$##0.00",
+        crosshair: {
+            enabled: true,
+            snapToDataPoint: true,
+            labelFormatter: function(e) {
+                return "$" + CanvasJS.formatNumber(e.value, "##0.00");
+            }
+        }
+    },
+    data: [{
+        type: "area",
+        xValueFormatString: "DD MMM",
+        yValueFormatString: "$##0.00",
+        dataPoints: [
+            { x: new Date(2020, 01, 01), y: 21423 },
+            { x: new Date(2020, 02, 01), y: 32041 },
+            { x: new Date(2020, 03, 01), y: 35231 },
+            { x: new Date(2020, 04, 01), y: 41124 },
+            { x: new Date(2020, 05, 01), y: 51515 },
+            { x: new Date(2020, 06, 01), y: 51214 },
+            { x: new Date(2020, 07, 01), y: 64362 },
+            { x: new Date(2020, 08, 01), y: 43217 },
+            { x: new Date(2020, 09, 01), y: 52352 },
+            { x: new Date(2020, 10, 01), y: 70745 },
+            { x: new Date(2020, 11, 01), y: 65043 },
+            { x: new Date(2020, 12, 01), y: 55041 }
+        ]
+    }]
+});
+chart.render();
+
+}
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization() {
+    // Some raw data (not necessarily accurate)
+    var data = google.visualization.arrayToDataTable([
+        ['Food', 'İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Adana', 'Ortalama'],
+        ['Meyve',  17165,      9938,         2522,             2998,           3450,      5614.6],
+        ['Sebze',  21135,      10120,        11599,             5268,          3288,      9682],
+        ['Küçükbaş Hay. Ür.',  20157,      14167,        16587,             11807,           12397,      10623],
+        ['Büyükbaş Hay. Ür.',  7139,      5110,        5615,             3968,           2215,      3209.4],
+        ['Deniz Ür.',  10136,      5691,         17629,             3026,          5366,      7569.6]
+    ]);
+
+    var options = {
+        title : '',
+        vAxis: {title: ''},
+        hAxis: {title: ''},
+        seriesType: 'bars',
+        series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('manager_charts2'));
+    chart.draw(data, options);
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <a href="index.html"><img class="logo" src="image/countryside_fields.png"></a>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/manager.png">
+            <span class="span"><a href="manager.html">Yönetici</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/product.png">
+            <span class="span"><a href="urun_yonetimi.html">Ürün Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/supply.png">
+            <span class="span"><a href="tedarik_zinciri_yonetimi.html">Tedarik Zinciri Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/crm.png">
+            <span class="span">Müşteri İlişkileri Yönetimi</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/employees.png">
+            <span class="span">İnsan Kaynakları</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/accounting.png">
+            <span class="span">Muhasebe</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Ürünlerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Tedarikçilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Müşterilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/turnoff.png">
+            <span class="span">Çıkış</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <span class="banner_span">Bayilerimiz</span>
+            <span class="banner_span">Kampanyalarımız</span>
+            <span class="banner_span">Hakkımızda</span>
+            <span class="banner_span">İletişim</span>
+            <span class="banner_span">Yardım</span>
+            <span class="banner_span">SSS</span>
+            <span class="banner_span">Dil</span>
+            <span class="banner_span_ara">Ara</span>
+        </div>
+        <div class="ana_sayfa_icerik">
+            <div class="manager_icerik">
+                <div class="manager_span">Geçen Yılın Aylar Bazında Hasılat Verileri</div>
+                <div id="manager_charts1"></div>
+            </div>
+            <div class="manager_icerik">
+                <div class="manager_span">Büyükşehirlerin Alışveriş Verileri</div>
+                <div id="manager_charts2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

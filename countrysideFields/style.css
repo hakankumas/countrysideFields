@@ -1,0 +1,260 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.container{
+	display: flex;
+	font-family: sans-serif;
+
+}
+
+.container .sidebar{
+	width: 250px;
+	height: 100vh;
+	background-color: #9FDB93;
+	text-align: center;
+}
+
+.container .sidebar .logo{
+	width: 200px;
+	height: 200px,;
+	margin-top: 5px;
+}
+
+.container .sidebar .arac_paneli{
+	display: flex;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.container .sidebar .arac_paneli .symbol{
+	width:30px;
+    height:30px;
+}
+
+.container .sidebar .arac_paneli .span{
+	color: black;
+	margin: 15px;
+	font-size: 15px;
+}
+.container .sidebar .arac_paneli .span a{
+	text-decoration: none;
+	color: black;
+}
+
+.container .content{
+	flex: 1;
+	height: 100vh;
+	background-color: white;
+}
+
+.container .content .banner{
+	width: 100%;
+	height: 70px;
+	background-color: #B3F5A5;
+	font-size: 20px;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container .content .banner .banner_span{
+	margin: 40px;
+}
+.container .content .banner .banner_span_ara{
+	width: 80px;
+	height: 50px;
+	background-color: #ff6000;
+	border-style: solid;
+	border: 1px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: azure;
+}
+.container .content .ana_sayfa_icerik{
+	width: auto;
+	height: 100vh;
+	font-size: 15px;
+	display: flex;
+}
+.container .content .ana_sayfa_icerik .islev{
+	width: 80%;
+	height: auto;
+	font-size: 50px;
+	background-color: white;
+	color:black;
+	text-align: center;
+
+}
+.container .content .ana_sayfa_icerik .iletisim{
+	width: 20%;
+	color: black;
+	text-align:center;
+	background:#9FDB93
+}
+
+.container .content .ana_sayfa_icerik .islev #biz_kimiz{
+	font-size: 50px;
+	text-align: center;
+	margin: 20px;
+	font-weight: bolder;
+
+}
+.container .content .ana_sayfa_icerik .islev #islev_photo{
+	width: 60%;
+	height: 60%;
+	margin: 10px;
+	border-radius: 7px;
+}
+.container .content .ana_sayfa_icerik .islev #biz_kimiz_aciklama{
+	font-size: 20px;
+	text-align:justify;
+	margin: 20px;
+	text-indent:50px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.container .content .ana_sayfa_icerik .iletisim #bize_ulasin{
+	font-size: 30px;
+	margin: 20px;
+}
+.container .content .ana_sayfa_icerik .iletisim .bize_ulasin_span{
+	font-size: 15px;
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.container .content .ana_sayfa_icerik .stok_durumu .urun_yonetimi_icerik{
+	width: 300px;
+	height: 100px;
+	font-size: 25px;
+	border: 1px;
+	border-style: solid;
+	background-color: #cad0ac;
+	margin: 60px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container .content .ana_sayfa_icerik .stok_durumu #urun_yonetimi_charts1{
+	width: 350px;
+	display: flex;
+	margin: 30px;
+
+}
+.container .content .ana_sayfa_icerik .stok_durumu #urun_yonetimi_charts2{
+	width: 350px;
+	display: flex;
+	margin: 30px;
+
+}
+.container .content .ana_sayfa_icerik .stok_durumu #urun_yonetimi_charts3{
+	width: 350px;
+	display: flex;
+	margin: 30px;
+}
+
+.container .content .ana_sayfa_icerik .tedarik_zinciri_icerik .tedarik_zinciri_span{
+	width: 300px;
+	height: 100px;
+	font-size: 25px;
+	border: 1px;
+	border-style: solid;
+	background-color: #cad0ac;
+	margin-top: 60px;
+	margin-left: 200px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.container .content .ana_sayfa_icerik .tedarik_zinciri_icerik #tedarik_zinciri_charts1{
+	width: 350px;
+	display: flex;
+	margin: 30px;
+	margin-top: 90px;
+	margin-left: 175px;
+	
+}
+.container .content .ana_sayfa_icerik .tedarik_zinciri_icerik #tedarik_zinciri_charts2{
+	width: 450px;
+	height: 400px;
+	display: flex;
+	margin: 30px;
+	margin-top: 90px;
+	margin-left: 175px;
+}
+
+.container .content .ana_sayfa_icerik .manager_icerik .manager_span{
+	width: 300px;
+	height: 100px;
+	font-size: 25px;
+	border: 1px;
+	border-style: solid;
+	background-color: #cad0ac;
+	margin-top: 60px;
+	margin-left: 150px;
+	margin-bottom: 60px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.container .content .ana_sayfa_icerik .manager_icerik #manager_charts1{
+	width: 500px;
+	height: 400px;
+	display: flex;
+	margin: 30px;
+	margin-left: 20px;
+}
+.container .content .ana_sayfa_icerik .manager_icerik #manager_charts2{
+	width: 680px;
+	height: 400px;
+	display: flex;
+	margin-left: 20px;
+}

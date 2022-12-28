@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<head>
+<title>countrysideFields.com</title>
+<meta charset="UTF-8"/>
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<script src='https://www.gstatic.com/charts/loader.js'></script>
+<script>
+    google.charts.load('upcoming', {'packages': ['vegachart']}).then(drawChart);
+
+    function drawChart() {
+    const dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({type: 'string', 'id': 'category'});
+    dataTable.addColumn({type: 'number', 'id': 'amount'});
+    dataTable.addRows([
+        ['Meyve', 35],
+        ['Sebze', 42],
+        ['Büyükbaş Hay. Ür.', 33],
+        ['Küçükbaş Hay. Ür.', 61],
+        ['Deniz Ür.', 23],
+
+    ]);
+
+    const options = {
+        "vega": {
+        "$schema": "https://vega.github.io/schema/vega/v4.json",
+        "width": 500,
+        "height": 300,
+        "padding": 5,
+
+        'data': [{'name': 'table', 'source': 'datatable'}],
+
+        "signals": [
+            {
+            "name": "tooltip",
+            "value": {},
+            "on": [
+                {"events": "rect:mouseover", "update": "datum"},
+                {"events": "rect:mouseout",  "update": "{}"}
+            ]
+            }
+        ],
+
+        "scales": [
+            {
+            "name": "xscale",
+            "type": "band",
+            "domain": {"data": "table", "field": "category"},
+            "range": "width",
+            "padding": 0.05,
+            "round": true
+            },
+            {
+            "name": "yscale",
+            "domain": {"data": "table", "field": "amount"},
+            "nice": true,
+            "range": "height"
+            }
+        ],
+
+        "axes": [
+            { "orient": "bottom", "scale": "xscale" },
+            { "orient": "left", "scale": "yscale" }
+        ],
+
+        "marks": [
+            {
+            "type": "rect",
+            "from": {"data":"table"},
+            "encode": {
+                "enter": {
+                "x": {"scale": "xscale", "field": "category"},
+                "width": {"scale": "xscale", "band": 1},
+                "y": {"scale": "yscale", "field": "amount"},
+                "y2": {"scale": "yscale", "value": 0}
+                },
+                "update": {
+                "fill": {"value": "steelblue"}
+                },
+                "hover": {
+                "fill": {"value": "red"}
+                }
+            }
+            },
+            {
+            "type": "text",
+            "encode": {
+                "enter": {
+                "align": {"value": "center"},
+                "baseline": {"value": "bottom"},
+                "fill": {"value": "#333"}
+                },
+                "update": {
+                "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
+                "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
+                "text": {"signal": "tooltip.amount"},
+                "fillOpacity": [
+                    {"test": "datum === tooltip", "value": 0},
+                    {"value": 1}
+                ]
+                }
+            }
+            }
+        ]
+        }
+    };
+
+    const chart = new google.visualization.VegaChart(document.getElementById('urun_yonetimi_charts1'));
+    chart.draw(dataTable, options);
+    }
+</script>
+<script>
+    google.charts.load('upcoming', {'packages': ['vegachart']}).then(drawChart);
+
+    function drawChart() {
+    const dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({type: 'string', 'id': 'category'});
+    dataTable.addColumn({type: 'number', 'id': 'amount'});
+    dataTable.addRows([
+        ['Yumurta', 94175],
+        ['Süt', 88125],
+        ['Domates', 75145],
+        ['Beyaz Et', 71101],
+        ['Patates', 65537],
+        ['Köy Ekmeği', 43798],
+        ['Tereyağ', 25378],
+        ['Soğan', 19398],
+
+    ]);
+
+    const options = {
+        "vega": {
+        "$schema": "https://vega.github.io/schema/vega/v4.json",
+        "width": 500,
+        "height": 300,
+        "padding": 5,
+
+        'data': [{'name': 'table', 'source': 'datatable'}],
+
+        "signals": [
+            {
+            "name": "tooltip",
+            "value": {},
+            "on": [
+                {"events": "rect:mouseover", "update": "datum"},
+                {"events": "rect:mouseout",  "update": "{}"}
+            ]
+            }
+        ],
+
+        "scales": [
+            {
+            "name": "xscale",
+            "type": "band",
+            "domain": {"data": "table", "field": "category"},
+            "range": "width",
+            "padding": 0.05,
+            "round": true
+            },
+            {
+            "name": "yscale",
+            "domain": {"data": "table", "field": "amount"},
+            "nice": true,
+            "range": "height"
+            }
+        ],
+
+        "axes": [
+            { "orient": "bottom", "scale": "xscale" },
+            { "orient": "left", "scale": "yscale" }
+        ],
+
+        "marks": [
+            {
+            "type": "rect",
+            "from": {"data":"table"},
+            "encode": {
+                "enter": {
+                "x": {"scale": "xscale", "field": "category"},
+                "width": {"scale": "xscale", "band": 1},
+                "y": {"scale": "yscale", "field": "amount"},
+                "y2": {"scale": "yscale", "value": 0}
+                },
+                "update": {
+                "fill": {"value": "steelblue"}
+                },
+                "hover": {
+                "fill": {"value": "red"}
+                }
+            }
+            },
+            {
+            "type": "text",
+            "encode": {
+                "enter": {
+                "align": {"value": "center"},
+                "baseline": {"value": "bottom"},
+                "fill": {"value": "#333"}
+                },
+                "update": {
+                "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
+                "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
+                "text": {"signal": "tooltip.amount"},
+                "fillOpacity": [
+                    {"test": "datum === tooltip", "value": 0},
+                    {"value": 1}
+                ]
+                }
+            }
+            }
+        ]
+        }
+    };
+
+    const chart = new google.visualization.VegaChart(document.getElementById('urun_yonetimi_charts2'));
+    chart.draw(dataTable, options);
+    }
+</script>
+<script>
+    google.charts.load('upcoming', {'packages': ['vegachart']}).then(drawChart);
+
+    function drawChart() {
+    const dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({type: 'string', 'id': 'category'});
+    dataTable.addColumn({type: 'number', 'id': 'amount'});
+    dataTable.addRows([
+        ['Kabak', 3248],
+        ['Pırasa', 4178],
+        ['Lahana', 4875],
+        ['Karnabahar', 6961],
+
+    ]);
+
+    const options = {
+        "vega": {
+        "$schema": "https://vega.github.io/schema/vega/v4.json",
+        "width": 500,
+        "height": 300,
+        "padding": 5,
+
+        'data': [{'name': 'table', 'source': 'datatable'}],
+
+        "signals": [
+            {
+            "name": "tooltip",
+            "value": {},
+            "on": [
+                {"events": "rect:mouseover", "update": "datum"},
+                {"events": "rect:mouseout",  "update": "{}"}
+            ]
+            }
+        ],
+
+        "scales": [
+            {
+            "name": "xscale",
+            "type": "band",
+            "domain": {"data": "table", "field": "category"},
+            "range": "width",
+            "padding": 0.05,
+            "round": true
+            },
+            {
+            "name": "yscale",
+            "domain": {"data": "table", "field": "amount"},
+            "nice": true,
+            "range": "height"
+            }
+        ],
+
+        "axes": [
+            { "orient": "bottom", "scale": "xscale" },
+            { "orient": "left", "scale": "yscale" }
+        ],
+
+        "marks": [
+            {
+            "type": "rect",
+            "from": {"data":"table"},
+            "encode": {
+                "enter": {
+                "x": {"scale": "xscale", "field": "category"},
+                "width": {"scale": "xscale", "band": 1},
+                "y": {"scale": "yscale", "field": "amount"},
+                "y2": {"scale": "yscale", "value": 0}
+                },
+                "update": {
+                "fill": {"value": "steelblue"}
+                },
+                "hover": {
+                "fill": {"value": "red"}
+                }
+            }
+            },
+            {
+            "type": "text",
+            "encode": {
+                "enter": {
+                "align": {"value": "center"},
+                "baseline": {"value": "bottom"},
+                "fill": {"value": "#333"}
+                },
+                "update": {
+                "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
+                "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
+                "text": {"signal": "tooltip.amount"},
+                "fillOpacity": [
+                    {"test": "datum === tooltip", "value": 0},
+                    {"value": 1}
+                ]
+                }
+            }
+            }
+        ]
+        }
+    };
+
+    const chart = new google.visualization.VegaChart(document.getElementById('urun_yonetimi_charts3'));
+    chart.draw(dataTable, options);
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <a href="index.html"><img class="logo" src="image/countryside_fields.png"></a>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/manager.png">
+            <span class="span"><a href="manager.html">Yönetici</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/product.png">
+            <span class="span"><a href="urun_yonetimi.html">Ürün Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/supply.png">
+            <span class="span"><a href="tedarik_zinciri_yonetimi.html">Tedarik Zinciri Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/crm.png">
+            <span class="span">Müşteri İlişkileri Yönetimi</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/employees.png">
+            <span class="span">İnsan Kaynakları</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/accounting.png">
+            <span class="span">Muhasebe</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Ürünlerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Tedarikçilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Müşterilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/turnoff.png">
+            <span class="span">Çıkış</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <span class="banner_span">Bayilerimiz</span>
+            <span class="banner_span">Kampanyalarımız</span>
+            <span class="banner_span">Hakkımızda</span>
+            <span class="banner_span">İletişim</span>
+            <span class="banner_span">Yardım</span>
+            <span class="banner_span">SSS</span>
+            <span class="banner_span">Dil</span>
+            <span class="banner_span_ara">Ara</span>
+        </div>
+        <div class="ana_sayfa_icerik">
+            <div class="stok_durumu">
+                <div class="urun_yonetimi_icerik">Stok Durumu (%)</div>
+                <div id="urun_yonetimi_charts1"></div>
+            </div>
+            <div class="stok_durumu">
+                <div class="urun_yonetimi_icerik">Çok Satan Ürünler (Adet)</div>
+                <div id="urun_yonetimi_charts2"></div>
+            </div>
+            <div class="stok_durumu">
+                <div class="urun_yonetimi_icerik">Az Satan Ürünler (Adet)</div>
+                <div id="urun_yonetimi_charts3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

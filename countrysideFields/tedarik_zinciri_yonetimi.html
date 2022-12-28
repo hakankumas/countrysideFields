@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+<title>countrysideFields.com</title>
+<meta charset="UTF-8"/>
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("tedarik_zinciri_charts1", {
+    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    animationEnabled: true,
+    title: {
+        text: ""
+    },
+    data: [{
+        type: "pie",
+        startAngle: 25,
+        toolTipContent: "<b>{label}</b>: {y}%",
+        showInLegend: "true",
+        legendText: "{label}",
+        indexLabelFontSize: 16,
+        indexLabel: "{label} - {y}%",
+        dataPoints: [
+            { y: 10.09, label: "Marmara" },
+            { y: 14.74, label: "Ege" },
+            { y: 23.41, label: "Akdeniz" },
+            { y: 27.05, label: "Karadeniz" },
+            { y: 11.78, label: "İç Anadolu" },
+            { y: 9.56, label: "Güneydoğu Anadolu" },
+            { y: 3.37, label: "Doğu Anadolu" }
+        ]
+    }]
+});
+chart.render();
+
+}
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['', 'Alış', 'Satış'],
+      ['İstanbul', 503948, 226400],
+      ['Ankara', 329762, 119741],
+      ['İzmir', 410660, 35120],
+      ['Bursa', 215373, 150141],
+      ['Adana', 190768, 560432],
+      ['Antalya', 170786, 502437],
+      ['Eskişehir', 237533, 120575],
+      ['Gaziantep', 230453, 550456],
+      ['Konya', 267322, 350455],
+      ['Mersin', 150378, 384522],
+      ['Kayseri', 193722, 256347],
+      ['Trabzon', 50375, 200345],
+      ['Erzurum', 30453, 90453]
+    ]);
+
+    var options = {
+      chart: {
+        title: '',
+        subtitle: '',
+      },
+      bars: 'horizontal' // Required for Material Bar Charts.
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('tedarik_zinciri_charts2'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+  }
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <a href="index.html"><img class="logo" src="image/countryside_fields.png"></a>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/manager.png">
+            <span class="span"><a href="manager.html">Yönetici</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/product.png">
+            <span class="span"><a href="urun_yonetimi.html">Ürün Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/supply.png">
+            <span class="span"><a href="tedarik_zinciri_yonetimi.html">Tedarik Zinciri Yönetimi</a></span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/crm.png">
+            <span class="span">Müşteri İlişkileri Yönetimi</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/employees.png">
+            <span class="span">İnsan Kaynakları</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/accounting.png">
+            <span class="span">Muhasebe</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Ürünlerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Tedarikçilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/list.png">
+            <span class="span">Müşterilerimiz</span>
+        </div>
+        <div class="arac_paneli">
+            <img class="symbol" src="image/turnoff.png">
+            <span class="span">Çıkış</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <span class="banner_span">Bayilerimiz</span>
+            <span class="banner_span">Kampanyalarımız</span>
+            <span class="banner_span">Hakkımızda</span>
+            <span class="banner_span">İletişim</span>
+            <span class="banner_span">Yardım</span>
+            <span class="banner_span">SSS</span>
+            <span class="banner_span">Dil</span>
+            <span class="banner_span_ara">Ara</span>
+        </div>
+        <div class="ana_sayfa_icerik">
+            <div class="tedarik_zinciri_icerik">
+                <div class="tedarik_zinciri_span">Bölgelere Göre Tedarikçi Yüzdesi</div>
+                <div id="tedarik_zinciri_charts1"></div> 
+            </div>
+            <div class="tedarik_zinciri_icerik">
+                <div class="tedarik_zinciri_span">En Çok Satış Yapan Şehirlerin Ticaret Hacmi</div>
+                <div id="tedarik_zinciri_charts2"></div> 
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
